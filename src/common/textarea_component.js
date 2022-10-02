@@ -12,6 +12,9 @@ const TextAreaComponent = ({ name, label, formik, placeholder }) => {
         value={formik?.values[name]}
         onChange={formik?.handleChange}
       />
+      {formik?.touched[name] && formik?.errors[name] ? (
+        <p className="text-red-600 text-sm">{formik?.errors[name]}</p>
+      ) : null}
     </div>
   );
 };
